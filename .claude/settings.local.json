@@ -9,7 +9,26 @@
       "Bash(git push:*)",
       "Bash(gh repo:*)",
       "Bash(brew install:*)",
-      "Bash(gh auth:*)"
+      "Bash(gh auth:*)",
+      "Bash(ssh:*)",
+      "Bash(gh --version)",
+      "Bash(pnpm approve-builds:*)",
+      "Bash(pnpm dev:*)",
+      "Bash(pnpm rebuild:*)",
+      "Bash(node-gyp --version)",
+      "Bash(npm install:*)",
+      "WebFetch(domain:xyt.hzbchina.com.cn)",
+      "mcp__fetch__fetch",
+      "Read(//home/mikasa/.claude/**)",
+      "Bash(ls -la /home/mikasa/project/pic-website/*.json)",
+      "Bash(ls:*)",
+      "Bash(cp \"/mnt/c/Users/mikasa-dyp/Desktop/Snipaste_2026-04-25_16-59-37.png\" /tmp/eye-reference.png)",
+      "Read(//tmp/**)",
+      "Bash(identify /home/mikasa/project/pic-website/eye-ref2.png)",
+      "mcp__github__search_repositories",
+      "Bash(pnpm add:*)",
+      "Bash(CI=true pnpm install)",
+      "Bash(pnpm fix:*)"
     ]
   }
 }

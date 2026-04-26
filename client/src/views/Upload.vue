@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { onMounted, ref, watch } from 'vue'
 import api from '../api'
 
@@ -123,16 +124,25 @@ async function uploadPhoto() {
 }
 
 async function deletePhoto(photoId: number) {
-  if (!confirm('确定要删除这张照片吗？'))
+  try {
+    await ElMessageBox.confirm('确定要删除这张照片吗？', '提示', {
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      type: 'warning',
+    })
+  }
+  catch {
     return
+  }
 
   deletingId.value = photoId
   try {
     await api.delete(`/api/photos/${photoId}`)
     photos.value = photos.value.filter(p => p.id !== photoId)
+    ElMessage.success('删除成功')
   }
   catch (e: any) {
-    alert(e.response?.data?.error || '删除失败')
+    ElMessage.error(e.response?.data?.error || '删除失败')
   }
   finally {
     deletingId.value = null
