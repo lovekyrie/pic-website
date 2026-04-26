@@ -1,22 +1,27 @@
 {
   "name": "pic-website-client",
-  "version": "1.0.0",
   "type": "module",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "fix": "eslint . --fix"
   },
   "dependencies": {
-    "vue": "^3.4.15",
-    "vue-router": "^4.2.5",
+    "axios": "^1.6.5",
     "pinia": "^2.1.7",
-    "axios": "^1.6.5"
+    "vue": "^3.4.15",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^4.19.0",
     "@vitejs/plugin-vue": "^5.0.3",
+    "eslint": "^9.39.1",
     "typescript": "^5.3.3",
     "vite": "^5.0.11",
+    "vue-eslint-parser": "^10.4.0",
     "vue-tsc": "^1.8.27"
   }
 }

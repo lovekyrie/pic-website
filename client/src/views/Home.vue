@@ -1,8 +1,30 @@
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import api from '../api'
+
+const albums = ref<any[]>([])
+const loading = ref(true)
+
+onMounted(async () => {
+  try {
+    const res = await api.get('/api/albums')
+    albums.value = res.data
+  }
+  finally {
+    loading.value = false
+  }
+})
+</script>
+
 <template>
   <div class="home">
     <h1>相册列表</h1>
-    <div v-if="loading" class="loading">加载中...</div>
-    <div v-else-if="albums.length === 0" class="empty">暂无相册</div>
+    <div v-if="loading" class="loading">
+      加载中...
+    </div>
+    <div v-else-if="albums.length === 0" class="empty">
+      暂无相册
+    </div>
     <div v-else class="album-grid">
       <router-link
         v-for="album in albums"
@@ -11,7 +33,7 @@
         class="album-card"
       >
         <div class="album-cover">
-          <img v-if="album.cover_url" :src="album.cover_url" :alt="album.name" />
+          <img v-if="album.cover_url" :src="album.cover_url" :alt="album.name">
           <span v-else class="no-cover">📁</span>
         </div>
         <div class="album-info">
@@ -23,23 +45,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import api from '../api';
-
-const albums = ref<any[]>([]);
-const loading = ref(true);
-
-onMounted(async () => {
-  try {
-    const res = await api.get('/api/albums');
-    albums.value = res.data;
-  } finally {
-    loading.value = false;
-  }
-});
-</script>
 
 <style scoped>
 .home h1 {

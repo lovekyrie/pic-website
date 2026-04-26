@@ -1,9 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/Home.vue';
-import Album from '../views/Album.vue';
-import Login from '../views/Login.vue';
-import Register from '../views/Register.vue';
-import Upload from '../views/Upload.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+import Album from '../views/Album.vue'
+import Home from '../views/Home.vue'
+import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
+import Upload from '../views/Upload.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -14,6 +14,6 @@ const router = createRouter({
     { path: '/register', component: Register },
     { path: '/upload', component: Upload },
   ],
-});
+})
 
-export default router;
+export default router
